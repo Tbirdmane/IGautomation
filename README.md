@@ -99,6 +99,19 @@ hero image) and a **`mood`**. Three ways to turn that into the cover image:
    Generated images carry Google's SynthID watermark. OpenAI Images also works —
    `export OPENAI_API_KEY=... IMAGE_PROVIDER=openai` (runs locally; OpenAI's host
    is firewalled in the sandbox).
+
+   **Free alternative — Cloudflare Workers AI (FLUX.1-schnell).** Also pure REST
+   and reachable from the sandbox, with a generous free tier (10k Neurons/day, no
+   credit card). FLUX.1-schnell is Apache-2.0 (commercial-safe):
+   ```bash
+   # account ID + API token from dash.cloudflare.com (Workers AI)
+   export CLOUDFLARE_ACCOUNT_ID=...  CLOUDFLARE_API_TOKEN=...
+   export IMAGE_PROVIDER=cloudflare
+   python -m igslides.imagegen content/daily_mythos.json   # generate + wire in
+   python -m igslides content/daily_mythos.json            # re-render
+   ```
+   Output is square and gets center-cropped to 4:5 by the renderer; nudge quality
+   with `CF_FLUX_STEPS` (1-8, default 4).
 2. **Paste workflow.** Copy the cover's `image_prompt` into any image tool
    (Midjourney, ChatGPT/DALL·E, Leonardo…), save to
    `assets/backgrounds/<slug>.png`, and set the cover's
