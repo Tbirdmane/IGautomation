@@ -41,7 +41,7 @@ def render_mythos(content):
                     img.convert("RGBA"), elements.bottom_gradient(W, H)
                 ).convert("RGB")
             else:
-                img = elements.make_backdrop(W, H)
+                img = elements.make_backdrop(W, H, slide.get("mood", "ember"))
             textkit.draw_lines(
                 img, slide["lines"], box=(margin, 0, W - 2 * margin, H - 230),
                 align="center", valign="bottom", max_size=104, min_size=46, leading=0.96,

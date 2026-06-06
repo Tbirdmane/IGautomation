@@ -32,14 +32,16 @@ def main(argv=None):
     ap = argparse.ArgumentParser(
         prog="igslides", description="Render Fortune University carousel slides from JSON."
     )
-    ap.add_argument("content", help="content JSON file, or a directory of them")
+    ap.add_argument("content", nargs="+", help="content JSON file(s), or directories of them")
     ap.add_argument("-o", "--out", default=None, help="output directory (default: ./output)")
     args = ap.parse_args(argv)
 
-    target = Path(args.content)
-    files = sorted(target.glob("*.json")) if target.is_dir() else [target]
+    files = []
+    for c in args.content:
+        p = Path(c)
+        files.extend(sorted(p.glob("*.json")) if p.is_dir() else [p])
     if not files:
-        raise SystemExit(f"No JSON content found at {target}")
+        raise SystemExit(f"No JSON content found at {args.content}")
 
     for f in files:
         saved = render_content(f, args.out)

@@ -47,9 +47,11 @@ DEFAULT_BRAND = {
     "name": "Fortune University",
     "handle": "@FortuneUniversity",
     "verified": True,
-    "avatar": None,          # path to a logo/photo; falls back to a monogram
+    # Drop the real seal at assets/logo.png and it's used automatically;
+    # until then slides fall back to a navy/gold "FU" monogram.
+    "avatar": "assets/logo.png",
     "tagline": "New post every week.",
-    "monogram_bg": "#11243F",
+    "monogram_bg": "#0A1C33",
 }
 
 

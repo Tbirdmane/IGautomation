@@ -43,7 +43,8 @@ Schema:
   "style": "mythos",
   "slug": "kebab-case-topic",
   "slides": [
-    { "variant": "cover", "background": "auto",
+    { "variant": "cover", "background": "auto", "mood": "ember",
+      "image_prompt": "vivid art-direction for a dramatic AI/tech hero image, dark and cinematic, empty darker space in the lower third for text, vertical 4:5, no text in image",
       "lines": [ {"text": "SHORT LINE", "color": "white"}, {"text": "PUNCH", "color": "red"} ],
       "hint": "(SWIPE LEFT FOR MORE)" },
     { "variant": "content",
@@ -57,6 +58,10 @@ RULES:
 - Each line is 2-4 words MAX. Break lines for rhythm and impact, like a poster.
 - Put the single most important phrase per slide in "red", the rest "white".
 - Cover = the hook (a surprising-but-true fact + a promise). Always include "hint".
+- Always add an "image_prompt" to the cover: a vivid prompt for a flashy AI/tech
+  hero image (dark, cinematic, dramatic; keep the lower third darker for text;
+  vertical 4:5; no text in the image). Pick a "mood": ember, crimson, electric,
+  gold, or violet.
 - 5 to 7 content slides, each making ONE point. Optional one-line "subtext".
 - End with an "outro" follow CTA.
 

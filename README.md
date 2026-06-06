@@ -1,14 +1,33 @@
 # IGautomation — Fortune University slide generator
 
-Generate Instagram carousel slides in two proven styles, from a single JSON file:
+Turn the day's real news into two finished Instagram carousels — one **Twitter-style**
+value post and one **flashy "mythos"** hook post — from a single JSON file each.
 
-- **`mythos`** — the flashy dark style: big ALL-CAPS lines, white text with key
-  phrases in red, ember backdrop, "swipe left" hook, follow-CTA outro.
-- **`twitter`** — the tweet-thread style: a dark cover, then clean white "tweet
-  card" slides with a verified badge, heading + body.
+- **`mythos`** — flashy dark style: big ALL-CAPS lines, white text with key
+  phrases in red, a cinematic AI-energy backdrop (or your own hero art), a
+  "swipe left" hook, and a follow-CTA outro.
+- **`twitter`** — tweet-thread style: a dark branded cover, then clean white
+  "tweet card" slides with the verified badge, heading + body.
 
-Everything renders to **1080×1350 PNGs** (Instagram's reach-friendly 4:5 portrait),
-ready to drop straight into a post.
+Everything renders to **1080×1350 PNGs** (Instagram's reach-friendly 4:5 portrait).
+
+---
+
+## The daily loop
+
+```
+research the web ──► pick 2 ideas ──► write copy (JSON) ──► [hero art] ──► render ──► post
+   ideas.py / chat         you          generate.py        imagegen.py    igslides
+```
+
+1. **Get ideas** — researched from live news (see below). Pick one for `twitter`,
+   one for `mythos`.
+2. **Write the copy** into `content/<slug>.json` — by hand (copy an example),
+   in a chat with Claude, or with `generate.py`.
+3. **Flashy cover art** (mythos only) — generate the hero image from the cover's
+   `image_prompt`, or let the built-in cinematic backdrop stand in. (details below)
+4. **Render**: `python -m igslides content/your_post.json`
+5. Post the `output/<slug>/` folder as a carousel.
 
 ---
 
@@ -17,113 +36,101 @@ ready to drop straight into a post.
 ```bash
 pip install -r requirements.txt          # just Pillow
 
-# render the two bundled examples
+# render today's two example posts
+python -m igslides content/daily_twitter.json content/daily_mythos.json
+
+# or everything in the folder
 python -m igslides content/
-
-# render one file
-python -m igslides content/example_twitter.json
-
-# custom output folder
-python -m igslides content/example_mythos.json -o /tmp/slides
 ```
 
 Output lands in `output/<slug>/slide-01.png`, `slide-02.png`, …
 
 ---
 
-## How it works
+## 1. Daily ideas (live research)
 
-Copy lives in JSON; a Pillow renderer turns it into images. That split means you
-can write the copy **by hand**, **in a chat with Claude**, or **fully automated**
-via the API script — the render step is identical either way.
+Two ways to get fresh, on-brand ideas grounded in real news (AI, crypto, money,
+apps, tech):
 
+- **Just ask Claude in chat** — "give me today's two post ideas" — and Claude
+  researches the web and proposes a `mythos` hook + a `twitter` post.
+- **Run the script** for hands-off automation:
+  ```bash
+  pip install anthropic && export ANTHROPIC_API_KEY=sk-...
+  python ideas.py --count 8 --json ideas.json
+  ```
+  It web-searches and prints ranked ideas, each tagged `mythos`/`twitter` with a
+  source link, ready to hand to `generate.py`.
+
+> Ground every hook in something true. The audience that converts to buyers is
+> the one that trusts you.
+
+---
+
+## 2. Generate the copy
+
+```bash
+pip install anthropic && export ANTHROPIC_API_KEY=sk-...
+python generate.py "A solo founder hit $10k/mo in 47 days with no code" --style twitter --render
+python generate.py "ChatGPT just hit 1 billion users" --style mythos --render
 ```
-topic ──► (you / Claude / generate.py) ──► content/*.json ──► python -m igslides ──► PNGs
-```
 
-### Content schema
+Writes `content/<slug>.json` (and renders with `--render`). For `mythos` posts it
+also fills in an `image_prompt` and `mood` for the cover. Tweak the voice by
+editing `SYSTEM_PROMPT` in `generate.py`. No API key? Hand-write the JSON — copy
+`content/daily_twitter.json` or `content/daily_mythos.json` and edit.
 
-Common fields:
+---
+
+## 3. Flashy cover art (mythos)
+
+Each `mythos` cover carries an **`image_prompt`** (art-direction for a dramatic AI
+hero image) and a **`mood`**. You have three ways to get the cover image, best → easiest:
+
+1. **Paste workflow (recommended).** Copy the cover's `image_prompt` into your
+   image tool (ChatGPT/DALL·E, Midjourney, Leonardo…), save the result to
+   `assets/backgrounds/<slug>.png`, and set the cover's
+   `"background": "assets/backgrounds/<slug>.png"`. The renderer composites your
+   headline + a legibility gradient on top.
+2. **Automated (OpenAI).** On your own machine:
+   ```bash
+   pip install openai && export OPENAI_API_KEY=sk-...
+   python -m igslides.imagegen content/daily_mythos.json   # generates + wires it up
+   python -m igslides content/daily_mythos.json            # re-render
+   ```
+   *(Image hosts are firewalled inside Claude's cloud sandbox, so this step runs
+   locally — not in a web session.)*
+3. **Zero effort.** Leave `"background": "auto"` and pick a `mood`
+   (`ember`, `crimson`, `electric`, `gold`, `violet`) — you get the built-in
+   cinematic "AI energy core" backdrop.
+
+---
+
+## 4. Your logo
+
+Drop your real Fortune University seal at **`assets/logo.png`** — it's used
+automatically as the avatar on Twitter-style slides (circular-cropped). Until
+then, slides fall back to a navy/gold "FU" monogram. See `assets/README.md`.
+
+---
+
+## Content schema (reference)
 
 ```jsonc
 {
   "style": "mythos" | "twitter",
   "slug": "kebab-case-name",          // output folder name
-  "size": [1080, 1350],               // optional
-  "brand": {
-    "name": "Fortune University",
-    "handle": "@FortuneUniversity",
-    "verified": true,
-    "avatar": "assets/logo.png",      // optional; falls back to an "FU" monogram
-    "tagline": "New post every week."
-  },
+  "brand": { "name": "...", "handle": "@...", "verified": true, "avatar": "assets/logo.png" },
   "slides": [ ... ]
 }
 ```
 
-A **line** (used in headlines) can be a string, a `{"text", "color"}` object, or
-`{"spans": [...]}` for inline multi-colour. Colours: `white`, `red`, `muted`,
-`blue`, or any hex like `"#E8372B"`.
+A **line** is a string, `{"text", "color"}`, or `{"spans": [...]}` for inline
+multi-colour. Colours: `white`, `red`, `muted`, `blue`, or hex (`"#E8372B"`).
 
-**mythos slides** — `variant` is `cover` | `content` | `outro`:
+- **mythos** `variant`: `cover` (`background`, `mood`, `image_prompt`, `lines`, `hint`)
+  · `content` (`lines`, optional `subtext`) · `outro` (`lines`).
+- **twitter** `variant`: `cover` (`lines`, optional `accent_right`/`accent_left` emoji)
+  · `tweet` (`heading`, `body` array) · `outro` (`lines`).
 
-```jsonc
-{ "variant": "cover", "background": "auto",   // or "assets/backgrounds/x.png"
-  "lines": [ {"text": "SEARCHES FOR", "color": "white"},
-             {"text": "\"VIBE CODING\"", "color": "red"} ],
-  "hint": "(SWIPE LEFT FOR MORE)" }
-
-{ "variant": "content",
-  "lines": [ {"text": "LOCAL BUSINESSES PAY", "color": "white"},
-             {"text": "$750 - $1,200", "color": "red"} ],
-  "subtext": "A plumber's booking page." }      // optional
-```
-
-**twitter slides** — `variant` is `cover` | `tweet` | `outro`:
-
-```jsonc
-{ "variant": "cover", "accent_right": "💰",
-  "lines": [ {"text": "HERE ARE 5 PROMPTS", "color": "red"} ] }
-
-{ "variant": "tweet",
-  "heading": "1 — The \"Hard Question\" Prompt",
-  "body": [ "Paragraph one.", "Paragraph two." ] }
-```
-
-See `content/example_mythos.json` and `content/example_twitter.json` for full,
-working examples.
-
----
-
-## Brand assets
-
-Put your logo at `assets/logo.png` and set `"avatar": "assets/logo.png"`.
-Drop dramatic cover art in `assets/backgrounds/`. See `assets/README.md`.
-
----
-
-## Optional: generate copy automatically
-
-`generate.py` turns a topic into a finished JSON via the Claude API.
-
-```bash
-pip install anthropic
-export ANTHROPIC_API_KEY=sk-...
-python generate.py "5 AI prompts that save 10 hours a week" --style twitter --render
-python generate.py "Why 'vibe coding' is a real side hustle" --style mythos --render
-```
-
-It writes `content/<slug>.json` and (with `--render`) the PNGs. Tweak the voice
-by editing `SYSTEM_PROMPT` in `generate.py`. Set `ANTHROPIC_MODEL` to change models.
-
----
-
-## A realistic 2-a-day workflow
-
-1. Pick two topics (one `mythos` hook, one `twitter` value post).
-2. Generate or hand-write the two JSON files in `content/`.
-3. `python -m igslides content/` to render everything.
-4. Skim the PNGs, fix any copy in the JSON, re-render.
-5. Post the folder as a carousel.
-
-Keep claims true — the audience that converts to buyers is the one that trusts you.
+Full working examples: `content/daily_*.json` and `content/example_*.json`.

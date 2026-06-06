@@ -1,0 +1,66 @@
+{
+  "style": "twitter",
+  "slug": "daily-no-code-playbook",
+  "slides": [
+    {
+      "variant": "cover",
+      "accent_right": "🚀",
+      "lines": [
+        {"text": "A SOLO FOUNDER HIT", "color": "white"},
+        {"text": "$10K A MONTH", "color": "red"},
+        {"text": "IN 47 DAYS —", "color": "white"},
+        {"text": "WITHOUT WRITING", "color": "white"},
+        {"text": "A LINE OF CODE.", "color": "white"},
+        {"text": "HERE'S THE PLAYBOOK:", "color": "white"}
+      ]
+    },
+    {
+      "variant": "tweet",
+      "heading": "1 — Pick a boring, specific problem",
+      "body": [
+        "The money in 2026 isn't in flashy apps. It's in unsexy niches: LinkedIn tools, B2B utilities, tiny workflow fixes.",
+        "Find one painful task a specific group does every single week."
+      ]
+    },
+    {
+      "variant": "tweet",
+      "heading": "2 — Let AI build the product",
+      "body": [
+        "The Lisbon founder never hand-wrote code — AI generated the app from plain-English descriptions.",
+        "Tools like Cursor, Lovable and Replit turn a clear spec into a working product."
+      ]
+    },
+    {
+      "variant": "tweet",
+      "heading": "3 — Make AI your entire team",
+      "body": [
+        "He used AI to write the docs, answer support tickets, and draft the marketing too.",
+        "One person now runs what used to take five."
+      ]
+    },
+    {
+      "variant": "tweet",
+      "heading": "4 — Win on distribution, not features",
+      "body": [
+        "72% of successful indie founders say distribution — not the product — was the deciding factor.",
+        "Post daily, build in public, and show up where your niche already hangs out."
+      ]
+    },
+    {
+      "variant": "tweet",
+      "heading": "5 — Charge from day one",
+      "body": [
+        "Free apps rarely pay off for solo builders. The ones hitting $20K-$62K/month charged real prices early.",
+        "Validate with dollars, not likes."
+      ]
+    },
+    {
+      "variant": "outro",
+      "lines": [
+        {"text": "SAVE THIS &", "color": "white"},
+        {"text": "FOLLOW FOR MORE", "color": "red"},
+        {"text": "AI MONEY PLAYS.", "color": "white"}
+      ]
+    }
+  ]
+}

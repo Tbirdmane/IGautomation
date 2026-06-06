@@ -1,0 +1,76 @@
+{
+  "style": "mythos",
+  "slug": "daily-ai-gold-rush",
+  "slides": [
+    {
+      "variant": "cover",
+      "background": "auto",
+      "mood": "ember",
+      "image_prompt": "Colossal humanoid AI titan forged from liquid chrome and molten gold circuitry, emerging from deep shadow, glowing crimson eyes, drifting sparks and embers, dramatic cinematic rim lighting, volumetric haze, ultra-detailed concept art, dark moody background with empty darker space in the lower third for text, vertical 4:5 composition, no text, photoreal, 8k",
+      "lines": [
+        {"text": "CHATGPT JUST HIT", "color": "white"},
+        {"text": "1 BILLION USERS.", "color": "red"},
+        {"text": "THE AI GOLD RUSH", "color": "white"},
+        {"text": "IS OFFICIALLY HERE.", "color": "white"},
+        {"text": "HERE'S HOW TO", "color": "white"},
+        {"text": "GRAB YOUR PIECE.", "color": "red"}
+      ],
+      "hint": "(SWIPE LEFT FOR MORE)"
+    },
+    {
+      "variant": "content",
+      "lines": [
+        {"text": "THE COMPANY BEHIND", "color": "white"},
+        {"text": "CLAUDE JUST FILED", "color": "white"},
+        {"text": "TO GO PUBLIC NEAR", "color": "white"},
+        {"text": "$1 TRILLION.", "color": "red"}
+      ],
+      "subtext": "Anthropic filed for its IPO this week."
+    },
+    {
+      "variant": "content",
+      "lines": [
+        {"text": "ITS REVENUE WENT", "color": "white"},
+        {"text": "FROM $10B TO $47B", "color": "red"},
+        {"text": "IN ONE YEAR.", "color": "white"}
+      ],
+      "subtext": "That's the size of the wave you're early to."
+    },
+    {
+      "variant": "content",
+      "lines": [
+        {"text": "BUT THE REAL MONEY", "color": "white"},
+        {"text": "ISN'T IN BUILDING AI.", "color": "white"},
+        {"text": "IT'S IN USING IT", "color": "red"},
+        {"text": "BEFORE EVERYONE ELSE.", "color": "white"}
+      ]
+    },
+    {
+      "variant": "content",
+      "lines": [
+        {"text": "ONE FOUNDER BUILT", "color": "white"},
+        {"text": "A $10K/MONTH APP", "color": "red"},
+        {"text": "IN 47 DAYS —", "color": "white"},
+        {"text": "WITHOUT CODING.", "color": "white"}
+      ],
+      "subtext": "AI wrote the app, the docs, and ran the ads."
+    },
+    {
+      "variant": "content",
+      "lines": [
+        {"text": "THE MICRO-SAAS MARKET:", "color": "white"},
+        {"text": "$15B TODAY.", "color": "white"},
+        {"text": "$60B BY 2030.", "color": "red"}
+      ],
+      "subtext": "Early movers take the biggest slice."
+    },
+    {
+      "variant": "outro",
+      "lines": [
+        {"text": "FOLLOW US FOR", "color": "white"},
+        {"text": "MORE AI MONEY", "color": "red"},
+        {"text": "PLAYS LIKE THIS.", "color": "white"}
+      ]
+    }
+  ]
+}
