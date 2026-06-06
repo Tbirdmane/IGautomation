@@ -1,0 +1,84 @@
+{
+  "style": "mythos",
+  "slug": "vibe-coding-mythos",
+  "brand": {
+    "name": "Fortune University",
+    "handle": "@FortuneUniversity",
+    "tagline": "New post every week."
+  },
+  "slides": [
+    {
+      "variant": "cover",
+      "background": "auto",
+      "lines": [
+        {"text": "SEARCHES FOR", "color": "white"},
+        {"text": "\"VIBE CODING\"", "color": "red"},
+        {"text": "EXPLODED 6,700%", "color": "white"},
+        {"text": "IN ONE YEAR.", "color": "white"},
+        {"text": "HERE'S HOW PEOPLE", "color": "white"},
+        {"text": "ARE CASHING IN.", "color": "red"}
+      ],
+      "hint": "(SWIPE LEFT FOR MORE)"
+    },
+    {
+      "variant": "content",
+      "lines": [
+        {"text": "VIBE CODING IS", "color": "white"},
+        {"text": "BUILDING REAL", "color": "white"},
+        {"text": "SOFTWARE BY", "color": "white"},
+        {"text": "DESCRIBING IT", "color": "red"},
+        {"text": "IN PLAIN ENGLISH.", "color": "red"}
+      ],
+      "subtext": "The AI writes the code. You direct it."
+    },
+    {
+      "variant": "content",
+      "lines": [
+        {"text": "LOCAL BUSINESSES", "color": "white"},
+        {"text": "PAY", "color": "white"},
+        {"text": "$750 - $1,200", "color": "red"},
+        {"text": "FOR A SIMPLE", "color": "white"},
+        {"text": "WEBSITE OR APP.", "color": "white"}
+      ],
+      "subtext": "A plumber's booking page. A gym's lead form."
+    },
+    {
+      "variant": "content",
+      "lines": [
+        {"text": "THE TOOLS DOING IT:", "color": "white"},
+        {"text": "CURSOR. LOVABLE.", "color": "red"},
+        {"text": "BOLT. REPLIT.", "color": "red"}
+      ],
+      "subtext": "Most have a free tier. Start tonight."
+    },
+    {
+      "variant": "content",
+      "lines": [
+        {"text": "NO COMPUTER", "color": "white"},
+        {"text": "SCIENCE DEGREE.", "color": "white"},
+        {"text": "NO BOOTCAMP.", "color": "white"},
+        {"text": "JUST CLEAR", "color": "red"},
+        {"text": "INSTRUCTIONS.", "color": "red"}
+      ],
+      "subtext": "The skill is describing the problem well."
+    },
+    {
+      "variant": "content",
+      "lines": [
+        {"text": "ONE CLIENT A WEEK", "color": "white"},
+        {"text": "AT $900 IS", "color": "white"},
+        {"text": "$3,600 A MONTH", "color": "red"},
+        {"text": "ON THE SIDE.", "color": "white"}
+      ],
+      "subtext": "Add monthly upkeep and it compounds."
+    },
+    {
+      "variant": "outro",
+      "lines": [
+        {"text": "FOLLOW US FOR", "color": "white"},
+        {"text": "MORE AI MONEY", "color": "red"},
+        {"text": "SKILLS LIKE THIS.", "color": "white"}
+      ]
+    }
+  ]
+}

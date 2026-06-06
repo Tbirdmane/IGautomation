@@ -1,0 +1,5 @@
+# Core renderer
+Pillow>=10.0
+
+# Optional — only needed for generate.py (topic -> JSON via the Claude API)
+# anthropic>=0.40

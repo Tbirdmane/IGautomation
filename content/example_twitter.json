@@ -1,0 +1,72 @@
+{
+  "style": "twitter",
+  "slug": "5-claude-prompts",
+  "brand": {
+    "name": "Fortune University",
+    "handle": "@FortuneUniversity",
+    "tagline": "New post every week."
+  },
+  "slides": [
+    {
+      "variant": "cover",
+      "accent_right": "💰",
+      "lines": [
+        {"text": "MOST PEOPLE USE", "color": "white"},
+        {"text": "AI LIKE A SEARCH", "color": "white"},
+        {"text": "ENGINE.", "color": "white"},
+        {"text": "", "color": "white"},
+        {"text": "HERE ARE 5 PROMPTS", "color": "red"},
+        {"text": "THAT MAKE IT WORK", "color": "white"},
+        {"text": "LIKE AN ADVISOR:", "color": "white"}
+      ]
+    },
+    {
+      "variant": "tweet",
+      "heading": "1 — The \"Hard Question\" Prompt",
+      "body": [
+        "Here is my situation: [DESCRIBE IT IN 3-4 SENTENCES]. My #1 goal is [GOAL + DEADLINE].",
+        "Don't give me advice yet. First, ask me the 3 hardest questions a top advisor would ask before saying anything. Then wait for my answers."
+      ]
+    },
+    {
+      "variant": "tweet",
+      "heading": "2 — The \"Steelman\" Prompt",
+      "body": [
+        "I'm leaning toward this decision: [DECISION].",
+        "Make the strongest possible case AGAINST it. Assume I'm missing something obvious. List the 3 ways this fails and what I'd need to believe for it to still be the right call."
+      ]
+    },
+    {
+      "variant": "tweet",
+      "heading": "3 — The \"One Reader\" Prompt",
+      "body": [
+        "Rewrite this so it speaks to ONE person: [PASTE YOUR TEXT].",
+        "That person is [WHO THEY ARE + WHAT THEY'RE WORRIED ABOUT]. Cut anything they wouldn't care about. Keep it under 120 words."
+      ]
+    },
+    {
+      "variant": "tweet",
+      "heading": "4 — The \"Turn It Into a System\" Prompt",
+      "body": [
+        "Here's a task I do over and over: [DESCRIBE IT].",
+        "Write me a step-by-step checklist a brand-new assistant could follow to do it exactly like I would, including the mistakes to avoid at each step."
+      ]
+    },
+    {
+      "variant": "tweet",
+      "heading": "5 — The \"Pressure Test\" Prompt",
+      "body": [
+        "Here's my plan: [PASTE PLAN].",
+        "Score it 1-10 on how likely it is to actually work. Be honest, not nice. Then tell me the single highest-leverage change that would move that score up the most."
+      ]
+    },
+    {
+      "variant": "outro",
+      "lines": [
+        {"text": "SAVE THIS &", "color": "white"},
+        {"text": "FOLLOW FOR MORE", "color": "red"},
+        {"text": "AI MONEY SKILLS.", "color": "white"}
+      ]
+    }
+  ]
+}
