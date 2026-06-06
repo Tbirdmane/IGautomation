@@ -85,24 +85,27 @@ editing `SYSTEM_PROMPT` in `generate.py`. No API key? Hand-write the JSON — co
 ## 3. Flashy cover art (mythos)
 
 Each `mythos` cover carries an **`image_prompt`** (art-direction for a dramatic AI
-hero image) and a **`mood`**. You have three ways to get the cover image, best → easiest:
+hero image) and a **`mood`**. Three ways to turn that into the cover image:
 
-1. **Paste workflow (recommended).** Copy the cover's `image_prompt` into your
-   image tool (ChatGPT/DALL·E, Midjourney, Leonardo…), save the result to
-   `assets/backgrounds/<slug>.png`, and set the cover's
-   `"background": "assets/backgrounds/<slug>.png"`. The renderer composites your
-   headline + a legibility gradient on top.
-2. **Automated (OpenAI).** On your own machine:
+1. **Auto-generate with Nano Banana (default).** Uses Google's Gemini image model
+   over its REST API — no SDK needed, and its host is reachable from the Claude
+   web sandbox, so this runs in a web session *or* locally:
    ```bash
-   pip install openai && export OPENAI_API_KEY=sk-...
-   python -m igslides.imagegen content/daily_mythos.json   # generates + wires it up
+   export GEMINI_API_KEY=...        # from Google AI Studio
+   python -m igslides.imagegen content/daily_mythos.json   # generate + wire in
    python -m igslides content/daily_mythos.json            # re-render
    ```
-   *(Image hosts are firewalled inside Claude's cloud sandbox, so this step runs
-   locally — not in a web session.)*
+   Higher-res "Nano Banana Pro": `export GEMINI_IMAGE_MODEL=gemini-3-pro-image`.
+   Generated images carry Google's SynthID watermark. OpenAI Images also works —
+   `export OPENAI_API_KEY=... IMAGE_PROVIDER=openai` (runs locally; OpenAI's host
+   is firewalled in the sandbox).
+2. **Paste workflow.** Copy the cover's `image_prompt` into any image tool
+   (Midjourney, ChatGPT/DALL·E, Leonardo…), save to
+   `assets/backgrounds/<slug>.png`, and set the cover's
+   `"background": "assets/backgrounds/<slug>.png"`.
 3. **Zero effort.** Leave `"background": "auto"` and pick a `mood`
-   (`ember`, `crimson`, `electric`, `gold`, `violet`) — you get the built-in
-   cinematic "AI energy core" backdrop.
+   (`ember`, `crimson`, `electric`, `gold`, `violet`) for the built-in cinematic
+   "AI energy core" backdrop.
 
 ---
 

@@ -1,32 +1,94 @@
 #!/usr/bin/env python3
-"""Optional: turn a cover's `image_prompt` into a hero background image.
+"""Turn a cover's `image_prompt` into a hero background image.
 
-Default provider is OpenAI Images (gpt-image-1). NOTE: image-generation hosts
-are firewalled inside the cloud sandbox, so run this on YOUR machine — or skip
-it and use the paste workflow (generate the prompt in any image tool, save the
-result to assets/backgrounds/, and point the cover's "background" at it).
+Default provider is Google's **Nano Banana** (Gemini image model) via its REST
+API — no SDK required, and its host is reachable from the Claude cloud sandbox,
+so this can run right inside a web session if GEMINI_API_KEY is set. OpenAI
+Images is available as an alternative (runs locally; OpenAI's host is firewalled
+in the sandbox).
+
+Provider is auto-detected from whichever key is present, or forced with
+IMAGE_PROVIDER=gemini|openai.
 
 Usage:
-    pip install openai
-    export OPENAI_API_KEY=sk-...
+    export GEMINI_API_KEY=...            # Nano Banana (default)
     python -m igslides.imagegen content/daily_mythos.json
+    python -m igslides content/daily_mythos.json     # re-render with the new art
+
+    # alternative:
+    export OPENAI_API_KEY=...  IMAGE_PROVIDER=openai && pip install openai
 """
 
 import argparse
 import base64
 import json
+import os
 import sys
+import urllib.error
+import urllib.request
 from pathlib import Path
 
 from . import config
 
+GEMINI_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+# Nano Banana = gemini-2.5-flash-image. For Nano Banana Pro (4K, better text)
+# set GEMINI_IMAGE_MODEL=gemini-3-pro-image.
+GEMINI_DEFAULT_MODEL = "gemini-2.5-flash-image"
+
+_SUPPORTED_RATIOS = {
+    "1:1": 1.0, "4:5": 0.8, "5:4": 1.25, "3:4": 0.75, "4:3": 1.333,
+    "2:3": 0.667, "3:2": 1.5, "9:16": 0.5625, "16:9": 1.778, "21:9": 2.333,
+}
+
+
+def _gemini_key():
+    return os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
+
+
+def _closest_ratio(w, h):
+    target = w / h
+    return min(_SUPPORTED_RATIOS, key=lambda r: abs(_SUPPORTED_RATIOS[r] - target))
+
+
+def generate_image_gemini(prompt, out_path, aspect_ratio="4:5", model=None):
+    key = _gemini_key()
+    if not key:
+        sys.exit("Set GEMINI_API_KEY (or GOOGLE_API_KEY) for Nano Banana image generation.")
+    model = model or os.environ.get("GEMINI_IMAGE_MODEL", GEMINI_DEFAULT_MODEL)
+    body = {
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {
+            "responseModalities": ["IMAGE"],
+            "imageConfig": {"aspectRatio": aspect_ratio},
+        },
+    }
+    req = urllib.request.Request(
+        GEMINI_ENDPOINT.format(model=model),
+        data=json.dumps(body).encode(),
+        headers={"Content-Type": "application/json", "x-goog-api-key": key},
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=180) as resp:
+            data = json.loads(resp.read())
+    except urllib.error.HTTPError as e:
+        raise SystemExit(f"Nano Banana request failed ({e.code}):\n{e.read().decode(errors='replace')}")
+
+    for cand in data.get("candidates", []):
+        for part in cand.get("content", {}).get("parts", []):
+            inline = part.get("inlineData") or part.get("inline_data")
+            if inline and inline.get("data"):
+                out_path.parent.mkdir(parents=True, exist_ok=True)
+                out_path.write_bytes(base64.b64decode(inline["data"]))
+                return out_path
+    raise SystemExit("Nano Banana returned no image:\n" + json.dumps(data, indent=2)[:1200])
+
 
 def generate_image_openai(prompt, out_path, size="1024x1536", model="gpt-image-1"):
-    """Generate one image and write it to out_path. Raises on failure."""
     try:
         from openai import OpenAI
     except ImportError:
-        sys.exit("The 'openai' package is required.\n  pip install openai   (and set OPENAI_API_KEY)")
+        sys.exit("pip install openai   (and set OPENAI_API_KEY)")
     client = OpenAI()
     result = client.images.generate(model=model, prompt=prompt, size=size)
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -34,24 +96,39 @@ def generate_image_openai(prompt, out_path, size="1024x1536", model="gpt-image-1
     return out_path
 
 
+def _provider():
+    forced = os.environ.get("IMAGE_PROVIDER", "").lower()
+    if forced:
+        return forced
+    if _gemini_key():
+        return "gemini"
+    if os.environ.get("OPENAI_API_KEY"):
+        return "openai"
+    return "gemini"
+
+
 def process(content_path):
     content_path = Path(content_path)
     data = json.loads(content_path.read_text())
     slug = data.get("slug", content_path.stem)
+    w, h = data.get("size", [config.WIDTH, config.HEIGHT])
+    provider = _provider()
 
     changed = False
     for slide in data.get("slides", []):
         if slide.get("variant") == "cover" and slide.get("image_prompt"):
             out = config.ASSETS / "backgrounds" / f"{slug}.png"
-            print(f"Generating hero image -> {out}")
-            generate_image_openai(slide["image_prompt"], out)
+            print(f"[{provider}] generating hero image -> {out}")
+            if provider == "openai":
+                generate_image_openai(slide["image_prompt"], out)
+            else:
+                generate_image_gemini(slide["image_prompt"], out, _closest_ratio(w, h))
             slide["background"] = str(out.relative_to(config.ROOT))
             changed = True
 
     if changed:
         content_path.write_text(json.dumps(data, indent=2, ensure_ascii=False))
-        print(f"Updated {content_path.name} to use the generated background. "
-              f"Re-render with:  python -m igslides {content_path}")
+        print(f"Updated {content_path.name}. Re-render with:  python -m igslides {content_path}")
     else:
         print("No cover slide with an 'image_prompt' was found — nothing to do.")
 
