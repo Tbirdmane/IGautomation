@@ -4,6 +4,7 @@ Pillow>=10.0
 # Optional — generate.py / ideas.py (topic & research via the Claude API)
 # anthropic>=0.40
 
-# Optional — only for the OpenAI image provider in imagegen.py.
-# Nano Banana (the default image provider) uses plain REST and needs NO package.
+# Image providers in imagegen.py need NO extra package — the default (free
+# Pollinations) and Nano Banana/Gemini both use plain REST. Only the optional
+# OpenAI provider needs a package:
 # openai>=1.0
