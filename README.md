@@ -117,6 +117,25 @@ then, slides fall back to a navy/gold "FU" monogram. See `assets/README.md`.
 
 ---
 
+## 5. Getting your slides each day
+
+Renders land in `output/<slug>/` — which is **git-ignored**, so daily posts never
+bloat the repo (it only ever holds source code + your logo). To pull a whole day's
+slides off the machine in one shot, add `--zip` and the renderer bundles every post
+into a single dated archive:
+
+```bash
+python -m igslides content/daily_mythos.json content/daily_twitter.json --zip
+# -> output/Fortune University <date>.zip   (both carousels, 14 PNGs)
+```
+
+In a Claude chat, just ask for "today's posts" — Claude renders, zips, and hands you
+that one file to download. Want a browsable history instead? Attach each day's zip to
+a dated GitHub Release; release assets live outside the git tree, so they don't bloat
+clones and can be deleted anytime.
+
+---
+
 ## Content schema (reference)
 
 ```jsonc

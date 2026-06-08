@@ -2,6 +2,8 @@
 
 import argparse
 import json
+import zipfile
+from datetime import date
 from pathlib import Path
 
 from . import config
@@ -28,12 +30,28 @@ def render_content(path, outdir=None):
     return saved
 
 
+def bundle(slugs, outdir=None, name=None):
+    """Zip the given rendered slide folders into one dated archive for easy download.
+
+    Lives in the (git-ignored) output dir, so it never bloats the repo."""
+    out = Path(outdir or config.OUTPUT)
+    name = name or f"Fortune University {date.today().isoformat()}.zip"
+    zpath = out / name
+    with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as z:
+        for slug in slugs:
+            for png in sorted((out / slug).glob("*.png")):
+                z.write(png, arcname=f"{slug}/{png.name}")
+    return zpath
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(
         prog="igslides", description="Render Fortune University carousel slides from JSON."
     )
     ap.add_argument("content", nargs="+", help="content JSON file(s), or directories of them")
     ap.add_argument("-o", "--out", default=None, help="output directory (default: ./output)")
+    ap.add_argument("--zip", action="store_true",
+                    help="bundle all rendered slides into one dated .zip for easy download")
     args = ap.parse_args(argv)
 
     files = []
@@ -43,9 +61,15 @@ def main(argv=None):
     if not files:
         raise SystemExit(f"No JSON content found at {args.content}")
 
+    slugs = []
     for f in files:
         saved = render_content(f, args.out)
+        slugs.append(saved[0].parent.name)
         print(f"  {f.name}: {len(saved)} slides -> {saved[0].parent}/")
+
+    if args.zip:
+        zpath = bundle(slugs, args.out)
+        print(f"  bundled {len(slugs)} post(s) -> {zpath}")
 
 
 if __name__ == "__main__":
