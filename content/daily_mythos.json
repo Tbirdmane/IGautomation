@@ -1,75 +1,76 @@
 {
   "style": "mythos",
-  "slug": "daily-ai-gold-rush",
+  "slug": "daily-ai-ipo-race",
   "slides": [
     {
       "variant": "cover",
       "background": "auto",
       "mood": "ember",
-      "image_prompt": "Colossal humanoid AI titan forged from liquid chrome and molten gold circuitry, emerging from deep shadow, glowing crimson eyes, drifting sparks and embers, dramatic cinematic rim lighting, volumetric haze, ultra-detailed concept art, dark moody background with empty darker space in the lower third for text, vertical 4:5 composition, no text, photoreal, 8k",
+      "image_prompt": "Colossal humanoid AI titan forged from liquid chrome and molten gold circuitry rising over a futuristic stock-exchange skyline at night, glowing crimson eyes, drifting sparks and embers, dramatic cinematic rim lighting, volumetric haze, ultra-detailed concept art, dark moody background with empty darker space in the lower third for text, vertical 4:5 composition, no text, photoreal, 8k",
       "lines": [
-        {"text": "CHATGPT JUST HIT", "color": "white"},
-        {"text": "1 BILLION USERS.", "color": "red"},
-        {"text": "THE AI GOLD RUSH", "color": "white"},
-        {"text": "IS OFFICIALLY HERE.", "color": "white"},
-        {"text": "HERE'S HOW TO", "color": "white"},
-        {"text": "GRAB YOUR PIECE.", "color": "red"}
+        {"text": "OPENAI JUST FILED", "color": "white"},
+        {"text": "TO GO PUBLIC AT", "color": "white"},
+        {"text": "$852 BILLION.", "color": "red"},
+        {"text": "AND IT'S NOT EVEN", "color": "white"},
+        {"text": "THE BIGGEST ONE.", "color": "red"}
       ],
       "hint": "(SWIPE LEFT FOR MORE)"
     },
     {
       "variant": "content",
       "lines": [
-        {"text": "THE COMPANY BEHIND", "color": "white"},
-        {"text": "CLAUDE JUST FILED", "color": "white"},
-        {"text": "TO GO PUBLIC NEAR", "color": "white"},
-        {"text": "$1 TRILLION.", "color": "red"}
+        {"text": "ANTHROPIC — THE", "color": "white"},
+        {"text": "TEAM BEHIND CLAUDE —", "color": "white"},
+        {"text": "FILED A WEEK EARLIER", "color": "white"},
+        {"text": "AT $965 BILLION.", "color": "red"}
       ],
-      "subtext": "Anthropic filed for its IPO this week."
+      "subtext": "Two AI giants going public, one week apart."
     },
     {
       "variant": "content",
       "lines": [
-        {"text": "ITS REVENUE WENT", "color": "white"},
-        {"text": "FROM $10B TO $47B", "color": "red"},
-        {"text": "IN ONE YEAR.", "color": "white"}
+        {"text": "THAT'S NEARLY", "color": "white"},
+        {"text": "$1.8 TRILLION", "color": "red"},
+        {"text": "IN NEW STOCK —", "color": "white"},
+        {"text": "AND SPACEX IS NEXT.", "color": "white"}
       ],
-      "subtext": "That's the size of the wave you're early to."
+      "subtext": "The biggest cluster of IPOs the market has ever seen."
     },
     {
       "variant": "content",
       "lines": [
-        {"text": "BUT THE REAL MONEY", "color": "white"},
-        {"text": "ISN'T IN BUILDING AI.", "color": "white"},
-        {"text": "IT'S IN USING IT", "color": "red"},
-        {"text": "BEFORE EVERYONE ELSE.", "color": "white"}
-      ]
+        {"text": "BUT HERE'S WHAT", "color": "white"},
+        {"text": "NOBODY TELLS YOU:", "color": "white"},
+        {"text": "THE REAL MONEY", "color": "white"},
+        {"text": "ISN'T IN THE STOCK.", "color": "red"}
+      ],
+      "subtext": "It's in using these tools before the crowd catches on."
     },
     {
       "variant": "content",
       "lines": [
-        {"text": "ONE FOUNDER BUILT", "color": "white"},
-        {"text": "A $10K/MONTH APP", "color": "red"},
-        {"text": "IN 47 DAYS —", "color": "white"},
-        {"text": "WITHOUT CODING.", "color": "white"}
+        {"text": "CHATGPT ALREADY HAS", "color": "white"},
+        {"text": "900 MILLION", "color": "red"},
+        {"text": "WEEKLY USERS.", "color": "white"}
       ],
-      "subtext": "AI wrote the app, the docs, and ran the ads."
+      "subtext": "The infrastructure of the next decade is already live."
     },
     {
       "variant": "content",
       "lines": [
-        {"text": "THE MICRO-SAAS MARKET:", "color": "white"},
-        {"text": "$15B TODAY.", "color": "white"},
-        {"text": "$60B BY 2030.", "color": "red"}
+        {"text": "THE WINNERS WON'T", "color": "white"},
+        {"text": "JUST BE INVESTORS.", "color": "white"},
+        {"text": "THEY'LL BE THE", "color": "white"},
+        {"text": "OPERATORS.", "color": "red"}
       ],
-      "subtext": "Early movers take the biggest slice."
+      "subtext": "Build with AI now — don't just bet on it."
     },
     {
       "variant": "outro",
       "lines": [
-        {"text": "FOLLOW US FOR", "color": "white"},
-        {"text": "MORE AI MONEY", "color": "red"},
-        {"text": "PLAYS LIKE THIS.", "color": "white"}
+        {"text": "FOLLOW FOR THE", "color": "white"},
+        {"text": "PLAYS MOST PEOPLE", "color": "red"},
+        {"text": "MISS.", "color": "white"}
       ]
     }
   ]
