@@ -121,18 +121,20 @@ then, slides fall back to a navy/gold "FU" monogram. See `assets/README.md`.
 
 Renders land in `output/<slug>/` — which is **git-ignored**, so daily posts never
 bloat the repo (it only ever holds source code + your logo). To pull a whole day's
-slides off the machine in one shot, add `--zip` and the renderer bundles every post
-into a single dated archive:
+slides off the machine in one shot, add `--zip` (one download) and `--preview`
+(a one-image contact sheet per post, so you can review a whole carousel without a
+pile of attachments):
 
 ```bash
-python -m igslides content/daily_mythos.json content/daily_twitter.json --zip
-# -> output/Fortune University <date>.zip   (both carousels, 14 PNGs)
+python -m igslides content/daily_mythos.json content/daily_twitter.json --zip --preview
+# -> output/Fortune University <date>.zip   (both carousels, 14 PNGs to post)
+# -> output/<slug>-preview.png              (one contact sheet per post to review)
 ```
 
-In a Claude chat, just ask for "today's posts" — Claude renders, zips, and hands you
-that one file to download. Want a browsable history instead? Attach each day's zip to
-a dated GitHub Release; release assets live outside the git tree, so they don't bloat
-clones and can be deleted anytime.
+In a Claude chat, just ask for "today's posts" — Claude renders, sends the two preview
+sheets to review, and hands you the one zip to post from. Want a browsable history
+instead? Attach each day's zip to a dated GitHub Release; release assets live outside
+the git tree, so they don't bloat clones and can be deleted anytime.
 
 ---
 

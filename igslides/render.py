@@ -7,6 +7,7 @@ from datetime import date
 from pathlib import Path
 
 from . import config
+from .montage import make_montage
 from .styles import RENDERERS
 
 
@@ -52,6 +53,8 @@ def main(argv=None):
     ap.add_argument("-o", "--out", default=None, help="output directory (default: ./output)")
     ap.add_argument("--zip", action="store_true",
                     help="bundle all rendered slides into one dated .zip for easy download")
+    ap.add_argument("--preview", action="store_true",
+                    help="also write a one-image contact sheet per post for quick review")
     args = ap.parse_args(argv)
 
     files = []
@@ -70,6 +73,10 @@ def main(argv=None):
     if args.zip:
         zpath = bundle(slugs, args.out)
         print(f"  bundled {len(slugs)} post(s) -> {zpath}")
+
+    if args.preview:
+        for slug in slugs:
+            print(f"  preview -> {make_montage(slug, base=args.out)}")
 
 
 if __name__ == "__main__":
