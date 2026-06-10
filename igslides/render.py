@@ -7,6 +7,7 @@ from datetime import date
 from pathlib import Path
 
 from . import config
+from . import imagegen
 from .montage import make_montage
 from .styles import RENDERERS
 
@@ -55,6 +56,8 @@ def main(argv=None):
                     help="bundle all rendered slides into one dated .zip for easy download")
     ap.add_argument("--preview", action="store_true",
                     help="also write a one-image contact sheet per post for quick review")
+    ap.add_argument("--art", action="store_true",
+                    help="generate cover hero art from image_prompt first (free Pollinations by default)")
     args = ap.parse_args(argv)
 
     files = []
@@ -66,6 +69,11 @@ def main(argv=None):
 
     slugs = []
     for f in files:
+        if args.art:
+            try:
+                imagegen.process(f)
+            except SystemExit as e:
+                print(f"  [art] skipped for {f.name}: {e}")
         saved = render_content(f, args.out)
         slugs.append(saved[0].parent.name)
         print(f"  {f.name}: {len(saved)} slides -> {saved[0].parent}/")

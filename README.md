@@ -93,9 +93,11 @@ hero image) and a **`mood`**. Pick how the cover image gets made:
    domains** (keep the default package-manager list checked) → save → start a new
    session. Then:
    ```bash
-   python -m igslides.imagegen content/daily_mythos.json   # free art, wired in
-   python -m igslides content/daily_mythos.json            # re-render
+   # one-shot: generate cover art, render, bundle, and make previews
+   python -m igslides content/daily_mythos.json --art --zip --preview
    ```
+   (If the domain isn't allowed yet, `--art` warns and falls back to the built-in
+   backdrop instead of failing.)
 2. **Nano Banana (Gemini) — paid, top quality.** `export IMAGE_PROVIDER=gemini`
    and set `GEMINI_API_KEY`. Image output is billed (~cents/image). Higher-res
    "Nano Banana Pro": `export GEMINI_IMAGE_MODEL=gemini-3-pro-image`. (OpenAI also
