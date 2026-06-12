@@ -1,69 +1,67 @@
 {
   "style": "mythos",
-  "slug": "daily-ai-ipo-race",
+  "slug": "daily-micron-trillion",
   "slides": [
     {
       "variant": "cover",
       "background": "auto",
-      "mood": "ember",
-      "image_prompt": "Colossal humanoid AI titan forged from liquid chrome and molten gold circuitry rising over a futuristic stock-exchange skyline at night, glowing crimson eyes, drifting sparks and embers, dramatic cinematic rim lighting, volumetric haze, ultra-detailed concept art, dark moody background with empty darker space in the lower third for text, vertical 4:5 composition, no text, photoreal, 8k",
+      "mood": "gold",
+      "image_prompt": "Colossal glowing AI memory-chip monolith built from stacked golden silicon wafers and luminous circuitry, radiating warm golden light, rising over a vast dark futuristic data-center skyline at night, streams of liquid-gold data flowing upward, dramatic cinematic rim lighting, volumetric haze, ultra-detailed concept art, dark moody background with empty darker space in the lower third for text, vertical 4:5 composition, no text, photoreal, 8k",
       "lines": [
-        {"text": "OPENAI JUST FILED", "color": "white"},
-        {"text": "TO GO PUBLIC AT", "color": "white"},
-        {"text": "$852 BILLION.", "color": "red"},
-        {"text": "AND IT'S NOT EVEN", "color": "white"},
-        {"text": "THE BIGGEST ONE.", "color": "red"}
+        {"text": "A 'BORING' CHIP STOCK", "color": "white"},
+        {"text": "JUST HIT $1 TRILLION —", "color": "red"},
+        {"text": "442 DAYS FASTER", "color": "white"},
+        {"text": "THAN NVIDIA.", "color": "red"}
       ],
       "hint": "(SWIPE LEFT FOR MORE)"
     },
     {
       "variant": "content",
       "lines": [
-        {"text": "ANTHROPIC — THE", "color": "white"},
-        {"text": "TEAM BEHIND CLAUDE —", "color": "white"},
-        {"text": "FILED A WEEK EARLIER", "color": "white"},
-        {"text": "AT $965 BILLION.", "color": "red"}
+        {"text": "MICRON DOUBLED FROM", "color": "white"},
+        {"text": "$500 BILLION TO", "color": "white"},
+        {"text": "$1 TRILLION IN", "color": "white"},
+        {"text": "48 TRADING DAYS.", "color": "red"}
       ],
-      "subtext": "Two AI giants going public, one week apart."
+      "subtext": "The fastest trillion-dollar run in market history."
     },
     {
       "variant": "content",
       "lines": [
-        {"text": "THAT'S NEARLY", "color": "white"},
-        {"text": "$1.8 TRILLION", "color": "red"},
-        {"text": "IN NEW STOCK —", "color": "white"},
-        {"text": "AND SPACEX IS NEXT.", "color": "white"}
+        {"text": "SK HYNIX CROSSED", "color": "white"},
+        {"text": "$1 TRILLION TOO —", "color": "red"},
+        {"text": "THE VERY NEXT DAY.", "color": "white"}
       ],
-      "subtext": "The biggest cluster of IPOs the market has ever seen."
+      "subtext": "Two memory makers. One week. One reason."
     },
     {
       "variant": "content",
       "lines": [
-        {"text": "BUT HERE'S WHAT", "color": "white"},
-        {"text": "NOBODY TELLS YOU:", "color": "white"},
-        {"text": "THE REAL MONEY", "color": "white"},
-        {"text": "ISN'T IN THE STOCK.", "color": "red"}
+        {"text": "EVERYONE WATCHED", "color": "white"},
+        {"text": "THE GPU MAKERS.", "color": "white"},
+        {"text": "THE REAL SQUEEZE", "color": "white"},
+        {"text": "WAS IN MEMORY.", "color": "red"}
       ],
-      "subtext": "It's in using these tools before the crowd catches on."
+      "subtext": "HBM — the high-bandwidth memory every AI chip runs on."
     },
     {
       "variant": "content",
       "lines": [
-        {"text": "CHATGPT ALREADY HAS", "color": "white"},
-        {"text": "900 MILLION", "color": "red"},
-        {"text": "WEEKLY USERS.", "color": "white"}
+        {"text": "MEMORY STOCKS ARE", "color": "white"},
+        {"text": "UP OVER 1,000%", "color": "red"},
+        {"text": "IN A YEAR.", "color": "white"}
       ],
-      "subtext": "The infrastructure of the next decade is already live."
+      "subtext": "The 'picks-and-shovels' outran the stars."
     },
     {
       "variant": "content",
       "lines": [
-        {"text": "THE WINNERS WON'T", "color": "white"},
-        {"text": "JUST BE INVESTORS.", "color": "white"},
-        {"text": "THEY'LL BE THE", "color": "white"},
-        {"text": "OPERATORS.", "color": "red"}
+        {"text": "THE BIGGEST GAINS", "color": "white"},
+        {"text": "HIDE ONE LAYER", "color": "white"},
+        {"text": "BENEATH THE", "color": "white"},
+        {"text": "OBVIOUS WINNER.", "color": "red"}
       ],
-      "subtext": "Build with AI now — don't just bet on it."
+      "subtext": "Find what the winner can't run without — that's where you're early."
     },
     {
       "variant": "outro",

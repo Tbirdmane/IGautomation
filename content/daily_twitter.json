@@ -1,56 +1,56 @@
 {
   "style": "twitter",
-  "slug": "daily-one-person-business",
+  "slug": "daily-physical-ai",
   "slides": [
     {
       "variant": "cover",
       "accent_right": "🤖",
       "lines": [
-        {"text": "38% OF MILLION-DOLLAR", "color": "white"},
-        {"text": "BUSINESSES NOW RUN", "color": "white"},
-        {"text": "ON A TEAM OF ONE.", "color": "red"},
-        {"text": "HERE'S THE EXACT", "color": "white"},
-        {"text": "AI STACK THEY USE:", "color": "white"}
+        {"text": "JEFF BEZOS JUST RAISED", "color": "white"},
+        {"text": "$12 BILLION FOR AN AI", "color": "white"},
+        {"text": "THAT BUILDS REAL THINGS.", "color": "red"},
+        {"text": "WHY THE SMART MONEY IS", "color": "white"},
+        {"text": "MOVING TO 'PHYSICAL AI':", "color": "white"}
       ]
     },
     {
       "variant": "tweet",
-      "heading": "1 — This isn't hype anymore",
+      "heading": "1 — Bezos is a CEO again",
       "body": [
-        "As of early 2026, 38% of seven-figure businesses are run by a single person — up from a rounding error a few years ago.",
-        "41.8 million solopreneurs now add $1.3 trillion to the economy. AI is the reason."
+        "Prometheus, co-led by Jeff Bezos, just raised $12B at a ~$41B valuation — backed by JPMorgan, BlackRock and Goldman Sachs.",
+        "It's his first CEO role since leaving Amazon in 2021. He didn't come back for another chatbot."
       ]
     },
     {
       "variant": "tweet",
-      "heading": "2 — Let AI build the product",
+      "heading": "2 — It builds atoms, not text",
       "body": [
-        "Base44 hit 250k users and sold to Wix for $80M — built lean, fast, with AI doing the heavy lifting.",
-        "Tools like Cursor, Lovable and Replit turn a plain-English spec into a working app. No engineering team."
+        "Prometheus is building an 'artificial general engineer' — AI that designs and manufactures physical products, from first sketch to factory floor.",
+        "Think cars, rockets, machines — engineered by AI."
       ]
     },
     {
       "variant": "tweet",
-      "heading": "3 — Make AI the rest of the company",
+      "heading": "3 — It's a pattern, not a one-off",
       "body": [
-        "Support, docs, design, and ops that used to need five hires now run on AI workflows.",
-        "HeadshotPro does $3.6M a year as a one-person shop. The 'team' is a stack of tools."
+        "The same week, Neura Robotics raised up to $1.4B at a $7B valuation — backed by Nvidia, Amazon, Qualcomm and Tether — to build humanoid robots.",
+        "The frontier is moving from screens to the physical world."
       ]
     },
     {
       "variant": "tweet",
-      "heading": "4 — Pick a narrow, boring niche",
+      "heading": "4 — Why now",
       "body": [
-        "The winners aren't building the next ChatGPT. They solve one painful task for one specific group.",
-        "Micro-SaaS in unsexy niches is clearing $10k–$50k/month with teams of one to three."
+        "Software AI is getting commoditized — everyone has a chatbot. The real opening is applying AI to the physical economy: manufacturing, robotics, engineering, logistics.",
+        "That's where the next giants get built."
       ]
     },
     {
       "variant": "tweet",
-      "heading": "5 — Stay lean on purpose",
+      "heading": "5 — What it means for you",
       "body": [
-        "Use AI to reach product-market fit and real revenue at near-zero headcount.",
-        "Then make surgical hires only where human judgment beats automation — not a day before."
+        "The next wave of AI businesses won't just write words — they'll design, build and move real things.",
+        "Watch physical AI: design tools, robotics, manufacturing software. Learn the tools early — that's how operators win."
       ]
     },
     {
