@@ -6,59 +6,58 @@
       "variant": "cover",
       "accent_right": "🤖",
       "lines": [
-        {"text": "JEFF BEZOS JUST RAISED", "color": "white"},
-        {"text": "$12 BILLION FOR AN AI", "color": "white"},
-        {"text": "THAT BUILDS REAL THINGS.", "color": "red"},
-        {"text": "WHY THE SMART MONEY IS", "color": "white"},
-        {"text": "MOVING TO 'PHYSICAL AI':", "color": "white"}
+        {"text": "JEFF BEZOS JUST", "color": "white"},
+        {"text": "BET $12 BILLION", "color": "red"},
+        {"text": "ON THE AI NOBODY'S", "color": "white"},
+        {"text": "TALKING ABOUT.", "color": "white"}
       ]
     },
     {
       "variant": "tweet",
-      "heading": "1 — Bezos is a CEO again",
+      "heading": "He's a CEO again",
       "body": [
-        "Prometheus, co-led by Jeff Bezos, just raised $12B at a ~$41B valuation — backed by JPMorgan, BlackRock and Goldman Sachs.",
-        "It's his first CEO role since leaving Amazon in 2021. He didn't come back for another chatbot."
+        "$12B raised at a $41B valuation. JPMorgan, BlackRock, Goldman — all in.",
+        "His first CEO job since Amazon."
       ]
     },
     {
       "variant": "tweet",
-      "heading": "2 — It builds atoms, not text",
+      "heading": "It doesn't make words — it makes things",
       "body": [
-        "Prometheus is building an 'artificial general engineer' — AI that designs and manufactures physical products, from first sketch to factory floor.",
-        "Think cars, rockets, machines — engineered by AI."
+        "Bezos calls it an 'artificial general engineer.'",
+        "AI that designs and builds real, physical products."
       ]
     },
     {
       "variant": "tweet",
-      "heading": "3 — It's a pattern, not a one-off",
+      "heading": "And he's not the only one",
       "body": [
-        "The same week, Neura Robotics raised up to $1.4B at a $7B valuation — backed by Nvidia, Amazon, Qualcomm and Tether — to build humanoid robots.",
-        "The frontier is moving from screens to the physical world."
+        "Same week: Nvidia + Amazon put $1.4B into humanoid robots.",
+        "The smart money is quietly leaving chatbots."
       ]
     },
     {
       "variant": "tweet",
-      "heading": "4 — Why now",
+      "heading": "Here's what nobody's saying",
       "body": [
-        "Software AI is getting commoditized — everyone has a chatbot. The real opening is applying AI to the physical economy: manufacturing, robotics, engineering, logistics.",
-        "That's where the next giants get built."
+        "Everyone's fighting over AI that types.",
+        "The next trillion is in AI that builds."
       ]
     },
     {
       "variant": "tweet",
-      "heading": "5 — What it means for you",
+      "heading": "Now you're early",
       "body": [
-        "The next wave of AI businesses won't just write words — they'll design, build and move real things.",
-        "Watch physical AI: design tools, robotics, manufacturing software. Learn the tools early — that's how operators win."
+        "Watch 'physical AI': robots, factories, engineering.",
+        "You're seeing it before the headlines catch up."
       ]
     },
     {
       "variant": "outro",
       "lines": [
-        {"text": "SAVE THIS &", "color": "white"},
-        {"text": "FOLLOW FOR MORE", "color": "red"},
-        {"text": "AI MONEY PLAYS.", "color": "white"}
+        {"text": "SAVE THIS.", "color": "white"},
+        {"text": "FOLLOW FOR WHAT", "color": "white"},
+        {"text": "THEY WON'T SAY.", "color": "red"}
       ]
     }
   ]

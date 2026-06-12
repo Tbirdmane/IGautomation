@@ -8,67 +8,62 @@
       "mood": "gold",
       "image_prompt": "Colossal glowing AI memory-chip monolith built from stacked golden silicon wafers and luminous circuitry, radiating warm golden light, rising over a vast dark futuristic data-center skyline at night, streams of liquid-gold data flowing upward, dramatic cinematic rim lighting, volumetric haze, ultra-detailed concept art, dark moody background with empty darker space in the lower third for text, vertical 4:5 composition, no text, photoreal, 8k",
       "lines": [
-        {"text": "A 'BORING' CHIP STOCK", "color": "white"},
-        {"text": "JUST HIT $1 TRILLION —", "color": "red"},
-        {"text": "442 DAYS FASTER", "color": "white"},
-        {"text": "THAN NVIDIA.", "color": "red"}
+        {"text": "WHILE EVERYONE", "color": "white"},
+        {"text": "WATCHED NVIDIA,", "color": "white"},
+        {"text": "THIS QUIETLY HIT", "color": "white"},
+        {"text": "$1 TRILLION.", "color": "red"}
       ],
-      "hint": "(SWIPE LEFT FOR MORE)"
+      "hint": "(SWIPE TO SEE IT)"
     },
     {
       "variant": "content",
       "lines": [
-        {"text": "MICRON DOUBLED FROM", "color": "white"},
-        {"text": "$500 BILLION TO", "color": "white"},
-        {"text": "$1 TRILLION IN", "color": "white"},
-        {"text": "48 TRADING DAYS.", "color": "red"}
+        {"text": "IT'S MICRON.", "color": "white"},
+        {"text": "442 DAYS FASTER", "color": "red"},
+        {"text": "THAN NVIDIA.", "color": "white"}
       ],
-      "subtext": "The fastest trillion-dollar run in market history."
+      "subtext": "Read that again."
     },
     {
       "variant": "content",
       "lines": [
-        {"text": "SK HYNIX CROSSED", "color": "white"},
-        {"text": "$1 TRILLION TOO —", "color": "red"},
-        {"text": "THE VERY NEXT DAY.", "color": "white"}
+        {"text": "$500 BILLION", "color": "white"},
+        {"text": "TO $1 TRILLION", "color": "white"},
+        {"text": "IN 48 DAYS.", "color": "red"}
       ],
-      "subtext": "Two memory makers. One week. One reason."
+      "subtext": "The fastest run in market history."
     },
     {
       "variant": "content",
       "lines": [
-        {"text": "EVERYONE WATCHED", "color": "white"},
-        {"text": "THE GPU MAKERS.", "color": "white"},
-        {"text": "THE REAL SQUEEZE", "color": "white"},
-        {"text": "WAS IN MEMORY.", "color": "red"}
+        {"text": "THE SECRET?", "color": "white"},
+        {"text": "ONE TINY CHIP", "color": "white"},
+        {"text": "INSIDE EVERY AI.", "color": "red"}
       ],
-      "subtext": "HBM — the high-bandwidth memory every AI chip runs on."
+      "subtext": "They call it HBM."
     },
     {
       "variant": "content",
       "lines": [
-        {"text": "MEMORY STOCKS ARE", "color": "white"},
-        {"text": "UP OVER 1,000%", "color": "red"},
-        {"text": "IN A YEAR.", "color": "white"}
-      ],
-      "subtext": "The 'picks-and-shovels' outran the stars."
+        {"text": "THE MONEY ISN'T", "color": "white"},
+        {"text": "IN THE AI.", "color": "white"},
+        {"text": "IT'S IN WHAT", "color": "white"},
+        {"text": "FEEDS IT.", "color": "red"}
+      ]
     },
     {
       "variant": "content",
       "lines": [
-        {"text": "THE BIGGEST GAINS", "color": "white"},
-        {"text": "HIDE ONE LAYER", "color": "white"},
-        {"text": "BENEATH THE", "color": "white"},
-        {"text": "OBVIOUS WINNER.", "color": "red"}
-      ],
-      "subtext": "Find what the winner can't run without — that's where you're early."
+        {"text": "NOW YOU SEE IT.", "color": "white"},
+        {"text": "MOST NEVER WILL.", "color": "red"}
+      ]
     },
     {
       "variant": "outro",
       "lines": [
-        {"text": "FOLLOW FOR THE", "color": "white"},
-        {"text": "PLAYS MOST PEOPLE", "color": "red"},
-        {"text": "MISS.", "color": "white"}
+        {"text": "FOLLOW FOR WHAT", "color": "white"},
+        {"text": "THEY DON'T", "color": "red"},
+        {"text": "TELL YOU.", "color": "white"}
       ]
     }
   ]
